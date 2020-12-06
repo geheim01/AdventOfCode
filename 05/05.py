@@ -27,9 +27,9 @@ def part1():
 
     print(max(seat_ids))
 
-
-        
+ 
 def part2():
+    
     available_seats = []
     for row in range(0,128):
         for column in range(0,8):
