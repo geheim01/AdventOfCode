@@ -9,8 +9,8 @@ acc +1
 jmp -4
 acc +6"""
 
-def part1 ():
 
+def part1():
     with open("input_08.txt", "r") as f:
         operations = f.read().split("\n")
 
@@ -27,28 +27,25 @@ def part1 ():
             count = int(operations[i].split(" ")[1].replace("+", ""))
             if op == "acc":
                 global_acc += count
-                #print("acc")
+                # print("acc")
             if op == "jmp":
                 i += count
                 continue
         i += 1
     print(global_acc)
 
+
 def part2():
-    
+
     with open("08/input_08.txt", "r") as f:
         operations_test = f.read().split("\n")
     global_acc = 0
     i = 0
     j = 0
-    jmp_count = 0
-    nop_count = 0
-    nops = test.count("nop")
-    jmps = test.count("jmp")
     #visited_indices = []
     #operations_test = test.split("\n")
     ops = []
-    
+
     for o in operations_test:
         ops.append(o.split(" ")[0])
 
@@ -61,8 +58,8 @@ def part2():
         elif ops_copy[j] == "jmp":
             ops_copy[j] = "nop"
         while i < len(operations_test):
-            if i in visited_indices: 
-                i =0
+            if i in visited_indices:
+                i = 0
                 global_acc = 0
                 break
             else:
@@ -71,12 +68,13 @@ def part2():
                 count = int(operations_test[i].split(" ")[1].replace("+", ""))
                 if op == "acc":
                     global_acc += count
-                    #print("acc")
+                    # print("acc")
                 if op == "jmp":
                     i += count
                     continue
                 i += 1
         j += 1
     print(global_acc)
+
 
 part2()

@@ -54,5 +54,5 @@ def part2(custom_forms):
         overall_counter += group_counter
     print(overall_counter)
 
-part1(custom_forms)
-part2(custom_forms)
+#part1(custom_forms)
+#part2(custom_forms)
